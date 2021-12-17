@@ -26,15 +26,26 @@ Copiez ou renommez `config.json.example` en `config.json` et remplissez les vale
 
 ```json
 {
-  "TOKEN": "",
-  "YOUTUBE_API_KEY": "",
+  "TOKEN": "VOTRE_BOT_TOKEN",
+  "YOUTUBE_API_KEY": "YouTube_Data_API_v3_google_cloud",
   "SOUNDCLOUD_CLIENT_ID": "",
   "MAX_PLAYLIST_SIZE": 10,
   "PREFIX": "&",
-  "PRUNING": false,
-  "LOCALE": "en",
-  "DEFAULT_VOLUME": 100,
-  "STAY_TIME": 30
+  "STAY_TIME": 30,
+  "DEFAULT_VOLUME": 50,
+  "greeting": {
+    "channel": "CHANNEL_DE_BIENVENUE"
+  },
+  "reactionRole": {
+    "ID_MESSAGE_DU_REGLEMENT": {
+      "emojis": [
+        {
+          "name": "✅",
+          "roles": "ID_DU_ROLE_À_ATTRIBUER"
+        }
+      ]
+    }
+  }
 }
 ```
 
