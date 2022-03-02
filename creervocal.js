@@ -1,4 +1,4 @@
-const database = require('./database.json');
+const database = require('./configvocal.json');
 
 /**
  * ----------------------------------------------
@@ -67,14 +67,14 @@ module.exports = (client) => {
             if (current_time < expiration_time) {
                 const time_left = (expiration_time - current_time) / 1000
                 newVoiceState.kick()
-                const Emed = new Discord.MessageEmbed().setColor(0xFF0022).setDescription(`**Не так часто!** Подождите ещё **${time_left.toFixed(1)}**с. чтобы создать канал\n**Not so often!** Wait another **${time_left.toFixed(1)}**s. to create a voice channel`)
+                const Emed = new Discord.MessageEmbed().setColor(0xFF0022).setDescription(`**Pas si souvent !** Attendez encore **${time_left.toFixed(1)}**secondes pour créer un canal vocal`)
                 newVoiceState.member.send(Emed).catch(() => console.log(generateTimeLog()+`\u001b[33mUnable to send message\u001b[0m ${newVoiceState.member.user.tag}`))
                 return
             }
         }
         let name = newVoiceState.member.nickname
         if (!name) name = newVoiceState.member.user.username
-        newVoiceState.guild.channels.create(name+'\'s channel', {
+        newVoiceState.guild.channels.create(`📞 Vocal de `+name, {
             type: 'voice',
             parent: newVoiceState.guild.channels.cache.find(channel => channel.id === configuration.create_rooms_channel_id).parentID,
             permissionOverwrites: [
