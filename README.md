@@ -15,7 +15,7 @@
 Download or clone repo
 Open in cmd
 npm install
-Run .bat file
+Run .bat or .sh file
 ```
 
 ## ⚙️ Configuration
@@ -59,6 +59,9 @@ Copiez ou renommez `config.json.example` en `config.json` et remplissez les vale
 * 🔎 Rechercher et sélectionner la musique à jouer
 * 📃 Lire des playlists youtube via l'url
 * 🔎 Lire des playlists youtube via une requête de recherche
+* 📢 Envoyer des messages de bienvenue
+* 👉 Attribué des rôles avec les réactions
+* 📞 Créer des salons vocaux privés pour les utilisateurs
 
 ## 👨‍💻  Commandes
 

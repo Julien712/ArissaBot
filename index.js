@@ -115,4 +115,5 @@ client.on('messageReactionRemove', (reaction, user) => {
   if (emoji) reaction.message.guild.member(user).roles.remove(emoji.roles)
 })
 
+require('./creervocal.js')(client);
 client.login(TOKEN);
