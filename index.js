@@ -5,7 +5,6 @@ const { Client, Collection, MessageEmbed } = require("discord.js");
 const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./util/Utils");
-const path = require("path");
 
 const config = require('./config.json');
 
@@ -129,5 +128,4 @@ client.on('messageReactionRemove', (reaction, user) => {
   if (emoji) reaction.message.guild.member(user).roles.remove(emoji.roles)
 })
 
-require('./creervocal.js')(client);
 client.login(TOKEN);
