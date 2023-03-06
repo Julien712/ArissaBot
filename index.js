@@ -26,20 +26,24 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  */
 client.on("ready", () => {
   console.log(`${client.user.username} is ready!!`);
-  const a = [
-    '&',
-    '&h',
-    '&he',
-    '&hel',
-    '&help'
-]
 
-let i = 0
+  // Définir les options d'activité
+  const activityOptions = [
+    { name: '&avatar', type: 'WATCHING' },
+    { name: '&play', type: 'WATCHING' },
+    { name: '&help', type: 'WATCHING' }
+  ];
 
-var timer = setInterval(() => {
-  client.user.setActivity(a[i], { type: "WATCHING" });
-  i++;
-  if (i == a.length) clearInterval(timer)}, 500);
+  // Fonction pour changer l'activité
+  function changeActivity() {
+    const randomIndex = Math.floor(Math.random() * activityOptions.length);
+    const selectedActivity = activityOptions[randomIndex];
+    client.user.setActivity(selectedActivity.name, { type: selectedActivity.type });
+  }
+
+  // Exécuter la fonction toutes les 5 secondes
+  setInterval(changeActivity, 5000);
+
 });
 
 client.on("warn", (info) => console.log(info));
